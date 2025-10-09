@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Indicar mes</title>
+<!-- TITULO: INDICAR MES -->
+<!--ENTRADA: NUMERO DEL 1 AL 12-->
+<!--SALIDA: EL MES ESCOGIDO-->
+<!--PROCESO: A traves de la elección de un número se escoge un mes--> 
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>1) Elija un mes del 1 al 12</p>
+
+  <label for="opcion">Elige una opción:</label>
+  <input type="number" id="opcion">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let opcion = parseInt(document.getElementById("opcion").value);
+      let mensaje = "";
+
+      switch (opcion) {
+        case 1:
+          mensaje = "Enero";
+          break;
+        case 2:
+          mensaje = "Febrero";
+          break;
+        case 3:
+          mensaje = "Marzo";
+          break;
+        case 4:
+          mensaje = "Abril";
+          break;
+        case 5:
+          mensaje = "Mayo";
+          break;
+        case 6:
+          mensaje = "Junio";
+          break;
+        case 7:
+          mensaje = "Julio";
+          break;
+        case 8:
+          mensaje = "Agosto";
+          break;
+        case 9:
+          mensaje = "SEPTIEMBRE";
+          break;
+        case 10:
+          mensaje = "Octubre";
+          break;
+        case 11:
+          mensaje = "Noviembre";
+          break;
+        case 12:
+          mensaje = "Diciembre"
+          break;
+        default:
+          mensaje = "Opción no válida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

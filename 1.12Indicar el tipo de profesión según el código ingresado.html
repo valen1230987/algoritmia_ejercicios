@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipo de profesión</title>
+  <!-- TITULO: INDICAR EL TIPO DE PROFESIÓN SEGÚN EL CÓDIGO INGRESADO -->
+  <!-- ENTRADA: CÓDIGO DE PROFESIÓN (1 al 6) -->
+  <!-- SALIDA: EL TIPO DE PROFESIÓN -->
+  <!-- PROCESO: Según el código ingresado se muestra la profesión correspondiente -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese un número del 1 al 6 para identificar la profesión</p>
+
+  <label for="codigo">Código de profesión:</label>
+  <input type="number" id="codigo">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let codigo = parseInt(document.getElementById("codigo").value);
+      let mensaje = "";
+
+      switch (codigo) {
+        case 1:
+          mensaje = "Médico";
+          break;
+        case 2:
+          mensaje = "Ingeniero";
+          break;
+        case 3:
+          mensaje = "Profesor";
+          break;
+        case 4:
+          mensaje = "Abogado";
+          break;
+        case 5:
+          mensaje = "Arquitecto";
+          break;
+        case 6:
+          mensaje = "Chef";
+          break;
+        default:
+          mensaje = "Código de profesión no válido";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

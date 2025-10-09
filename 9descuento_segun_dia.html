@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Indicar descuento segun el dia</title>
+<!-- TITULO: DESUENTO SEGUN EL DIA -->
+<!--ENTRADA: NUMERO DEL 1 AL 7-->
+<!--SALIDA: EL DESCUENTO SEGUN EL DIA-->
+<!--PROCESO: A traves de la elección de un dia se coloca un descuento--> 
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>1) Elija un dia del 1 al 7</p>
+
+  <label for="opcion">Elige una opción:</label>
+  <input type="number" id="opcion">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let opcion = parseInt(document.getElementById("opcion").value);
+      let mensaje = "";
+
+      switch (opcion) {
+        case 1:
+          mensaje = "Lunes su descuento es 10%";
+          break;
+        case 2:
+          mensaje = "Martes su descuento es 20%";
+          break;
+        case 3:
+          mensaje = "Miercoles su descuento es de 60%";
+          break;
+        case 4:
+          mensaje = "Jueves su descuento es de 5%";
+          break;
+        case 5:
+          mensaje = "Viernes su descuesnto es de 35,5%";
+          break;
+        case 6:
+          mensaje = "Los sabados y domingos no hay descuentos";
+          break;
+        case 7:
+          mensaje = "Los sabados y domingos no hay descuentos";
+          break;
+        default:
+          mensaje = "Opción no válida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipo de documento</title>
+  <!-- TITULO: VERIFICAR TIPO DE DOCUMENTO -->
+  <!-- ENTRADA: NÚMERO DEL DOCUMENTO (1 al 5) -->
+  <!-- SALIDA: EL TIPO DE DOCUMENTO -->
+  <!-- PROCESO: A través del número ingresado se identifica el tipo de documento -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese un número del 1 al 5 para verificar el tipo de documento</p>
+
+  <label for="doc">Número:</label>
+  <input type="number" id="doc">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let doc = parseInt(document.getElementById("doc").value);
+      let mensaje = "";
+
+      switch (doc) {
+        case 1:
+          mensaje = "Cédula de ciudadanía";
+          break;
+        case 2:
+          mensaje = "Tarjeta de identidad";
+          break;
+        case 3:
+          mensaje = "Cédula de extranjería";
+          break;
+        case 4:
+          mensaje = "Pasaporte";
+          break;
+        case 5:
+          mensaje = "Registro civil";
+          break;
+        default:
+          mensaje = "Número no válido";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

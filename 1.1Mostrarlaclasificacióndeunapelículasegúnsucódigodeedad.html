@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clasificación de película</title>
+  <!-- TITULO: CLASIFICACIÓN DE PELÍCULA -->
+  <!-- ENTRADA: NÚMERO QUE REPRESENTA EL CÓDIGO DE EDAD -->
+  <!-- SALIDA: CLASIFICACIÓN DE LA PELÍCULA -->
+  <!-- PROCESO: Se muestra la clasificación según el código ingresado -->
+</head>
+<body>
+  <h2>Clasificación de una película</h2>
+  <p>Seleccione el código de edad:</p>
+  <p>1) Apta para todo público<br>2) Mayores de 7 años<br>3) Mayores de 12 años<br>4) Mayores de 15 años<br>5) Mayores de 18 años</p>
+
+  <label for="codigo">Código:</label>
+  <input type="number" id="codigo">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let codigo = parseInt(document.getElementById("codigo").value);
+      let mensaje = "";
+
+      switch (codigo) {
+        case 1:
+          mensaje = "Clasificación: Apta para todo público";
+          break;
+        case 2:
+          mensaje = "Clasificación: Mayores de 7 años";
+          break;
+        case 3:
+          mensaje = "Clasificación: Mayores de 12 años";
+          break;
+        case 4:
+          mensaje = "Clasificación: Mayores de 15 años";
+          break;
+        case 5:
+          mensaje = "Clasificación: Mayores de 18 años";
+          break;
+        default:
+          mensaje = "Código no válido";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

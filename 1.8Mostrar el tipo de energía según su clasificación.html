@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipo de energía</title>
+  <!-- TITULO: MOSTRAR TIPO DE ENERGÍA SEGÚN SU CLASIFICACIÓN -->
+  <!-- ENTRADA: CÓDIGO DE ENERGÍA (1 al 6) -->
+  <!-- SALIDA: EL TIPO DE ENERGÍA -->
+  <!-- PROCESO: Según el número ingresado se muestra la energía correspondiente -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese un número del 1 al 6 para identificar el tipo de energía</p>
+
+  <label for="energia">Clasificación:</label>
+  <input type="number" id="energia">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let energia = parseInt(document.getElementById("energia").value);
+      let mensaje = "";
+
+      switch (energia) {
+        case 1:
+          mensaje = "Energía solar";
+          break;
+        case 2:
+          mensaje = "Energía eólica";
+          break;
+        case 3:
+          mensaje = "Energía hidráulica";
+          break;
+        case 4:
+          mensaje = "Energía geotérmica";
+          break;
+        case 5:
+          mensaje = "Energía nuclear";
+          break;
+        case 6:
+          mensaje = "Energía química (combustibles)";
+          break;
+        default:
+          mensaje = "Clasificación no válida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

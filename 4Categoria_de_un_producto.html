@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Indicar mes</title>
+<!-- TITULO: CATEGORIA DE UN PRODUCTO  -->
+<!--ENTRADA: NUMERO DEL 1 AL 6 -->
+<!--SALIDA: LA CATEGORIA DEL PRODUCTO-->
+<!--PROCESO: A traves de la elección de un número se escoge un LA CATEGORIA DEL PRODCUTO--> 
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>1) Elija la categoria del producto del 1 al 6</p>
+
+  <label for="opcion">Elige una opción:</label>
+  <input type="number" id="opcion">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let opcion = parseInt(document.getElementById("opcion").value);
+      let mensaje = "";
+
+      switch (opcion) {
+        case 1:
+          mensaje = "ROPA";
+          break;
+        case 2:
+          mensaje = "ELECTRODOMESTICO";
+          break;
+        case 3:
+          mensaje = "ASEO";
+          break;
+        case 4:
+          mensaje = "alimentos";
+          break;
+        case 5: 
+          mensaje =  "hogar";
+          break;
+        case 6:  
+          mensaje = "juguetes";
+          break;
+        default:
+          mensaje = "Opción no válida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

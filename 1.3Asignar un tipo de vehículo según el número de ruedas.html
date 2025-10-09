@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipo de vehículo</title>
+  <!-- TITULO: ASIGNAR VEHÍCULO SEGÚN RUEDAS -->
+  <!-- ENTRADA: NÚMERO DE RUEDAS -->
+  <!-- SALIDA: EL TIPO DE VEHÍCULO -->
+  <!-- PROCESO: A través del número de ruedas se determina el tipo de vehículo -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese el número de ruedas para conocer el tipo de vehículo</p>
+
+  <label for="ruedas">Número de ruedas:</label>
+  <input type="number" id="ruedas">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let ruedas = parseInt(document.getElementById("ruedas").value);
+      let mensaje = "";
+
+      switch (ruedas) {
+        case 1:
+          mensaje = "Monociclo";
+          break;
+        case 2:
+          mensaje = "Bicicleta o Motocicleta";
+          break;
+        case 3:
+          mensaje = "Triciclo o Motocarro";
+          break;
+        case 4:
+          mensaje = "Automóvil";
+          break;
+        case 6:
+          mensaje = "Camión pequeño";
+          break;
+        case 8:
+          mensaje = "Camión grande";
+          break;
+        case 18:
+          mensaje = "Tractomula";
+          break;
+        default:
+          mensaje = "Número de ruedas no corresponde a un vehículo típico";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

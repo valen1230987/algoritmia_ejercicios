@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipo de material</title>
+  <!-- TITULO: DETERMINAR MATERIAL SEGÚN CÓDIGO -->
+  <!-- ENTRADA: CÓDIGO DEL MATERIAL (1 al 5) -->
+  <!-- SALIDA: EL MATERIAL CORRESPONDIENTE -->
+  <!-- PROCESO: A través del código ingresado se determina el tipo de material -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese un número del 1 al 5 para identificar el tipo de material</p>
+
+  <label for="codigo">Código del material:</label>
+  <input type="number" id="codigo">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let codigo = parseInt(document.getElementById("codigo").value);
+      let mensaje = "";
+
+      switch (codigo) {
+        case 1:
+          mensaje = "Madera";
+          break;
+        case 2:
+          mensaje = "Metal";
+          break;
+        case 3:
+          mensaje = "Plástico";
+          break;
+        case 4:
+          mensaje = "Vidrio";
+          break;
+        case 5:
+          mensaje = "Papel o cartón";
+          break;
+        default:
+          mensaje = "Código no válido";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

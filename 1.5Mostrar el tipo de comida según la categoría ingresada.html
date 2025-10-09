@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipo de comida</title>
+  <!-- TITULO: MOSTRAR TIPO DE COMIDA SEGÚN CATEGORÍA -->
+  <!-- ENTRADA: CATEGORÍA (1 al 5) -->
+  <!-- SALIDA: EL TIPO DE COMIDA -->
+  <!-- PROCESO: A través de la categoría ingresada se determina el tipo de comida -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese un número del 1 al 5 para mostrar la categoría de comida</p>
+
+  <label for="categoria">Categoría:</label>
+  <input type="number" id="categoria">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let categoria = parseInt(document.getElementById("categoria").value);
+      let mensaje = "";
+
+      switch (categoria) {
+        case 1:
+          mensaje = "Frutas";
+          break;
+        case 2:
+          mensaje = "Verduras";
+          break;
+        case 3:
+          mensaje = "Carnes";
+          break;
+        case 4:
+          mensaje = "Lácteos";
+          break;
+        case 5:
+          mensaje = "Cereales";
+          break;
+        default:
+          mensaje = "Categoría no válida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

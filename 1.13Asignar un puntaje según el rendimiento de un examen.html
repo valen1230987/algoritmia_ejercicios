@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Puntaje de examen</title>
+  <!-- TITULO: ASIGNAR PUNTAJE SEGÚN RENDIMIENTO DE UN EXAMEN -->
+  <!-- ENTRADA: CÓDIGO DE RENDIMIENTO (1 al 5) -->
+  <!-- SALIDA: PUNTAJE CORRESPONDIENTE -->
+  <!-- PROCESO: Según el rendimiento ingresado se asigna un puntaje -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese un número del 1 al 5 para conocer el puntaje según rendimiento</p>
+
+  <label for="rendimiento">Rendimiento:</label>
+  <input type="number" id="rendimiento">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let rendimiento = parseInt(document.getElementById("rendimiento").value);
+      let mensaje = "";
+
+      switch (rendimiento) {
+        case 1:
+          mensaje = "Muy deficiente → 1 punto";
+          break;
+        case 2:
+          mensaje = "Deficiente → 2 puntos";
+          break;
+        case 3:
+          mensaje = "Aceptable → 3 puntos";
+          break;
+        case 4:
+          mensaje = "Bueno → 4 puntos";
+          break;
+        case 5:
+          mensaje = "Excelente → 5 puntos";
+          break;
+        default:
+          mensaje = "Código de rendimiento no válido";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

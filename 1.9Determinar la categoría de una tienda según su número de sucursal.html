@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Categoría de tienda</title>
+  <!-- TITULO: DETERMINAR CATEGORÍA DE TIENDA SEGÚN SU NÚMERO DE SUCURSAL -->
+  <!-- ENTRADA: NÚMERO DE SUCURSAL -->
+  <!-- SALIDA: CATEGORÍA DE LA TIENDA -->
+  <!-- PROCESO: Según el número ingresado se indica la categoría de la tienda -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese el número de sucursal para determinar la categoría de la tienda</p>
+
+  <label for="sucursal">Número de sucursal:</label>
+  <input type="number" id="sucursal">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let sucursal = parseInt(document.getElementById("sucursal").value);
+      let mensaje = "";
+
+      switch (sucursal) {
+        case 1:
+          mensaje = "Sucursal pequeña (tienda de barrio)";
+          break;
+        case 2:
+          mensaje = "Sucursal mediana (minimercado)";
+          break;
+        case 3:
+          mensaje = "Sucursal grande (supermercado)";
+          break;
+        case 4:
+          mensaje = "Sucursal extra grande (hipermercado)";
+          break;
+        case 5:
+          mensaje = "Sucursal especializada (tienda temática)";
+          break;
+        default:
+          mensaje = "Número de sucursal no válido";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

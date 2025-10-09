@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Código de acceso</title>
+  <!-- TITULO: CÓDIGO DE ACCESO SEGÚN ROL -->
+  <!-- ENTRADA: NÚMERO QUE REPRESENTA UN ROL -->
+  <!-- SALIDA: CÓDIGO DE ACCESO -->
+  <!-- PROCESO: A través de la elección del rol se asigna un código -->
+</head>
+<body>
+  <h2>Asignar código de acceso</h2>
+  <p>Seleccione el rol de usuario:</p>
+  <p>1) Administrador<br>2) Editor<br>3) Usuario<br>4) Invitado</p>
+
+  <label for="rol">Rol:</label>
+  <input type="number" id="rol">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let rol = parseInt(document.getElementById("rol").value);
+      let mensaje = "";
+
+      switch (rol) {
+        case 1:
+          mensaje = "Rol: Administrador - Código de acceso: ADM123";
+          break;
+        case 2:
+          mensaje = "Rol: Editor - Código de acceso: EDT456";
+          break;
+        case 3:
+          mensaje = "Rol: Usuario - Código de acceso: USR789";
+          break;
+        case 4:
+          mensaje = "Rol: Invitado - Código de acceso: INV000";
+          break;
+        default:
+          mensaje = "Rol no válido";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>
+

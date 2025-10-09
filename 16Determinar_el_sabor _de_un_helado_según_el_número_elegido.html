@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Elegir sabor de helado.</title>
+  <!-- TITULO: Elegir sabor de helado -->
+  <!-- ENTRADA: Se elige un número -->
+  <!-- SALIDA: Sale el sabor del helado -->
+  <!-- PROCESO: Según el número del 1 al 5, se asigna un sabor -->
+</head>
+<body>
+  <h2>Menú de sabores</h2>
+  <p>1) Vainilla 2) Chocolate 3) Fresa 4) Mango 5) Limón</p>
+
+  <label for="sabor">Elige una opción:</label>
+  <input type="number" id="sabor">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let opcion = parseInt(document.getElementById("sabor").value);
+      let mensaje = "";
+
+      switch (opcion) {
+        case 1: 
+        mensaje = "Vainilla";
+         break;
+        case 2: 
+        mensaje = "Chocolate"; 
+        break;
+        case 3: 
+        mensaje = "Fresa"; 
+        break;
+        case 4: 
+        mensaje = "Mango"; 
+        break;
+        case 5: 
+        mensaje = "Limón"; 
+        break;
+        default: mensaje = "Opción no válida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

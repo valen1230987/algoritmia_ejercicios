@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MENSAJE MOTIVACIONAL</title>
+    <!-- TITULO: Mostrar mensaje motivacional segun el dia elegido -->
+    <!-- ENTRADA: Se ingresa un dia del 1 al 7 -->
+    <!-- SALIDA: Sale el mensaje motivacional -->
+    <!-- PROCESO: Según el dia, se determina el mensaje motivacional -->
+</head>
+<body>
+    <h1>MENU DE ENTRADA PARA MENSAJE MOTIVACIONAL</h1>
+    <p>1)Lunes 2)Martes 3)Miercoles 4)Jueves 5)Viernes 6)Sabado 7)Domingo</p>
+    <label for="codigo">ELIGE UN DIA DE LA SEMANA</label>
+    <input type="number" id="codigo">
+    <button onclick="ejecutar()">OK</button>
+    <p id="resultado"></p>
+    <script>
+        function ejecutar(){
+            let opcion = parseInt(document.getElementById("codigo").value);
+            let mensaje = "";
+            switch (opcion) {
+                case 1: 
+                    mensaje = "lunes: Nuestra mayor debilidad radica en renunciar. La forma más segura de tener éxito es intentarlo una vez más.- Thomas Edison"; 
+                    break;
+                case 2: 
+                    mensaje = "martes: La mejor vida no es la más duradera, sino la más bien aquella que está repleta de buenas acciones.- Marie Curie"; 
+                    break;
+                case 3: 
+                    mensaje = "miercoles: No mires al reloj, haz lo que él hace. Sigue moviéndote.- Sam Levenson";
+                    break;
+                case 4: 
+                    mensaje = "jueves: La vida es el proceso de llegar a ser.- Anaïs Nin"; 
+                    break;
+                case 5: 
+                    mensaje = "viernes: Si te caíste ayer, levántate hoy."; 
+                    break;
+                case 6: 
+                    mensaje = "sabado: Hasta el tronco más grande surge de la semilla más pequeña."; 
+                    break;
+                case 7: 
+                    mensaje = "domingo: La reputación no surge de lo que tienes pensado hacer."; 
+                    break;
+                default:
+                    mensaje = "Código no válido";
+            }
+            document.getElementById("resultado").innerText = mensaje;
+        }
+    </script>
+</body>
+</html>

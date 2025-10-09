@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Evento de verano</title>
+  <!-- TITULO: INDICAR EL TIPO DE EVENTO DE VERANO SEGÚN EL NÚMERO DE PARTICIPANTES -->
+  <!-- ENTRADA: NÚMERO DE PARTICIPANTES -->
+  <!-- SALIDA: TIPO DE EVENTO -->
+  <!-- PROCESO: Según la cantidad de participantes se indica el evento de verano -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese el número de participantes para conocer el tipo de evento de verano</p>
+
+  <label for="personas">Número de participantes:</label>
+  <input type="number" id="personas">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let personas = parseInt(document.getElementById("personas").value);
+      let mensaje = "";
+
+      switch (true) {
+        case (personas > 0 && personas <= 10):
+          mensaje = "Picnic en la playa 🏖️";
+          break;
+        case (personas > 10 && personas <= 30):
+          mensaje = "Partido de voleibol de playa 🏐";
+          break;
+        case (personas > 30 && personas <= 100):
+          mensaje = "Festival de música local 🎶";
+          break;
+        case (personas > 100 && personas <= 500):
+          mensaje = "Competencia deportiva de verano 🏊";
+          break;
+        case (personas > 500):
+          mensaje = "Concierto masivo al aire libre 🎤";
+          break;
+        default:
+          mensaje = "Número de participantes no válido";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

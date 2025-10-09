@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Indicar el transporte seleccionado</title>
+<!-- TITULO: INDICAR si transporte segun como elija el usuario -->
+<!--ENTRADA: Elige del 1 al 5-->
+<!--SALIDA: EL TRANSPORTE SELECCIONADO-->
+<!--PROCESO: A traves de la eleccion de un numero del 1 al 5 se escogera un transporte--> 
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>1) Elija un numero del 1 al 5</p>
+
+  <label for="opcion">Elige una opción:</label>
+  <input type="number" id="opcion">  
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let opcion = parseInt(document.getElementById("opcion").value);        
+      let mensaje = "";
+
+      switch (opcion) {
+        case 1:
+          mensaje = "tren";
+          break;
+        case 2:
+          mensaje = "taxi";
+          break;
+        case 3:
+          mensaje = "bus";
+          break;
+        case 4:
+          mensaje = "moto";
+          break;
+        case 5:
+          mensaje = "carro";
+          break;
+        default:
+          mensaje = "Opción no válida";
+      }
+
+    document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

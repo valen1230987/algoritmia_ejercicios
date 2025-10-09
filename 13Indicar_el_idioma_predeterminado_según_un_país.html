@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Indicar el idioma predeterminado segun un pais.</title>
+<!-- TITULO: Indicar el idioma predeterminado segun un pais. -->
+<!--ENTRADA: Se escoge el pais y segun eso se muestra el idioma -->
+<!--SALIDA: Sale el idioma espanol, mandarin, hindi.-->
+<!--PROCESO: Indicar el idioma predeterminado segun un pais se puede escoger de 1 a 5.--> 
+</head>
+<body>
+  <h2>Menu de opciones</h2>
+  <p>1) Elija el pais para saber el idioma mes 1.China 2.Mexico 3.Estados Unidos 4.India 5.Arabia Saudita ".</p>
+
+  <label for="opcion">Elige una opcion:</label>
+  <input type="number" id="opcion">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let opcion = parseInt(document.getElementById("opcion").value);
+      let mensaje = "";
+
+      switch (opcion) {
+    case 1:
+         mensaje = "mandarin";
+         break;
+    case 2:
+         mensaje = "espanol";
+         break;
+    case 3:
+         mensaje = "ingles";
+         break;
+    case 4: 
+         mensaje = "Hindi";
+         break;
+    case 5: print
+        mensaje = "Arabe";
+        break;
+        default:
+          mensaje = "Opcion no valida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

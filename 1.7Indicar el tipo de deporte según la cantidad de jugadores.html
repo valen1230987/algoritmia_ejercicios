@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipo de deporte</title>
+  <!-- TITULO: INDICAR TIPO DE DEPORTE SEGÚN JUGADORES -->
+  <!-- ENTRADA: NÚMERO DE JUGADORES -->
+  <!-- SALIDA: EL DEPORTE CORRESPONDIENTE -->
+  <!-- PROCESO: A través del número de jugadores se determina el deporte -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese la cantidad de jugadores para identificar el deporte</p>
+
+  <label for="jugadores">Cantidad de jugadores:</label>
+  <input type="number" id="jugadores">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let jugadores = parseInt(document.getElementById("jugadores").value);
+      let mensaje = "";
+
+      switch (jugadores) {
+        case 1:
+          mensaje = "Tenis individual / Atletismo / Natación";
+          break;
+        case 2:
+          mensaje = "Tenis dobles / Ajedrez / Padel";
+          break;
+        case 5:
+          mensaje = "Baloncesto (equipo reducido)";
+          break;
+        case 6:
+          mensaje = "Voleibol";
+          break;
+        case 7:
+          mensaje = "Béisbol";
+          break;
+        case 11:
+          mensaje = "Fútbol";
+          break;
+        default:
+          mensaje = "Cantidad de jugadores no registrada en este menú";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

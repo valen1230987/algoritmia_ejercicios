@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Indicar mes</title>
+<!-- TITULO: Indicar la estación del año según el número de mes. -->
+<!--ENTRADA: Se escoge el numero 1 hasta el 12, puesto que son los meses -->
+<!--SALIDA: Sale la estacion segun el mes-->
+<!--PROCESO: Indicar la estación del año según el número de mes.--> 
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>1) Elija el mes deseado para conocer su estación</p>
+
+  <label for="opcion">Elige una opción:</label>
+  <input type="number" id="opcion">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let opcion = parseInt(document.getElementById("opcion").value);
+      let mensaje = "";
+
+      switch (opcion) {
+        case 12:
+        case 1:
+        case 2:
+          mensaje = "invierno";
+          break;
+        case 3:
+        case 4:
+        case 5:
+          mensaje = "primavera";
+          break;
+        case 6:
+        case 7:
+        case 8:
+          mensaje = "verano";
+          break;
+        case 9:
+        case 10:
+        case 11:
+          mensaje = "otoño";
+          break;
+        default:
+          mensaje = "Opción no válida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Indicar si es día festivo o laboral</title>
+<!-- TITULO: INDICAR si es día festivo o laboral -->
+<!--ENTRADA: NUMERO DEL 1 AL 7-->
+<!--SALIDA: EL DÍA ESCOGIDO ES LABORAL O FESTIVO-->
+<!--PROCESO: A traves de la elección de un número se escoge un dia y se dice si es festivo o laboral--> 
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>1) Elija un dia del 1 al 7</p>
+
+  <label for="opcion">Elige una opción:</label>
+  <input type="number" id="opcion">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let opcion = parseInt(document.getElementById("opcion").value);
+      let mensaje = "";
+
+      switch (opcion) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+          mensaje = "laborales";
+          break;
+        case 6:
+        case 7:
+          mensaje = "Festivo";
+          break;
+        default:
+          mensaje = "Opción no válida";
+      }
+
+    document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

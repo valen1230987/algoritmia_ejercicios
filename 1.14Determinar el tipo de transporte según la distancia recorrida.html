@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipo de transporte</title>
+  <!-- TITULO: DETERMINAR EL TIPO DE TRANSPORTE SEGÚN LA DISTANCIA -->
+  <!-- ENTRADA: DISTANCIA (KM) -->
+  <!-- SALIDA: TIPO DE TRANSPORTE -->
+  <!-- PROCESO: Según la distancia ingresada se determina el medio de transporte -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese la distancia recorrida en kilómetros</p>
+
+  <label for="distancia">Distancia (km):</label>
+  <input type="number" id="distancia" step="0.1">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let distancia = parseFloat(document.getElementById("distancia").value);
+      let mensaje = "";
+
+      switch (true) {
+        case (distancia > 0 && distancia <= 2):
+          mensaje = "Caminar 🚶";
+          break;
+        case (distancia > 2 && distancia <= 10):
+          mensaje = "Bicicleta 🚲";
+          break;
+        case (distancia > 10 && distancia <= 50):
+          mensaje = "Moto o automóvil 🚗";
+          break;
+        case (distancia > 50 && distancia <= 500):
+          mensaje = "Autobús o tren 🚆";
+          break;
+        case (distancia > 500):
+          mensaje = "Avión ✈️";
+          break;
+        default:
+          mensaje = "Distancia no válida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>

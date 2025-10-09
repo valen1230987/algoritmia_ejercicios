@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Categoría de edad</title>
+  <!-- TITULO: CATEGORÍA DE EDAD -->
+  <!-- ENTRADA: AÑOS DE UNA PERSONA -->
+  <!-- SALIDA: CATEGORÍA SEGÚN EDAD -->
+  <!-- PROCESO: A través de la edad ingresada se clasifica en una categoría -->
+</head>
+<body>
+  <h2>Categoría de edad</h2>
+  <p>Ingrese su edad en años:</p>
+
+  <label for="edad">Edad:</label>
+  <input type="number" id="edad">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let edad = parseInt(document.getElementById("edad").value);
+      let mensaje = "";
+
+      switch (true) {
+        case (edad >= 0 && edad <= 2):
+          mensaje = "Bebé";
+          break;
+        case (edad >= 3 && edad <= 11):
+          mensaje = "Niño";
+          break;
+        case (edad >= 12 && edad <= 17):
+          mensaje = "Adolescente";
+          break;
+        case (edad >= 18 && edad <= 59):
+          mensaje = "Adulto";
+          break;
+        case (edad >= 60):
+          mensaje = "Adulto mayor";
+          break;
+        default:
+          mensaje = "Edad no válida";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipo de alerta</title>
+  <!-- TITULO: MOSTRAR EL TIPO DE ALERTA SEGÚN EL NIVEL DE EMERGENCIA -->
+  <!-- ENTRADA: NÚMERO DEL NIVEL (1 al 5) -->
+  <!-- SALIDA: EL TIPO DE ALERTA -->
+  <!-- PROCESO: Según el número ingresado se indica la alerta correspondiente -->
+</head>
+<body>
+  <h2>Menú de opciones</h2>
+  <p>Ingrese un número del 1 al 5 para conocer el tipo de alerta</p>
+
+  <label for="nivel">Nivel de emergencia:</label>
+  <input type="number" id="nivel">
+  <button onclick="ejecutar()">Aceptar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function ejecutar() {
+      let nivel = parseInt(document.getElementById("nivel").value);
+      let mensaje = "";
+
+      switch (nivel) {
+        case 1:
+          mensaje = "Alerta verde: Situación controlada";
+          break;
+        case 2:
+          mensaje = "Alerta amarilla: Precaución, posible riesgo";
+          break;
+        case 3:
+          mensaje = "Alerta naranja: Peligro moderado, reforzar medidas";
+          break;
+        case 4:
+          mensaje = "Alerta roja: Peligro alto, actuar de inmediato";
+          break;
+        case 5:
+          mensaje = "Alerta máxima: Emergencia crítica 🚨";
+          break;
+        default:
+          mensaje = "Nivel de emergencia no válido";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
+    }
+  </script>
+</body>
+</html>
