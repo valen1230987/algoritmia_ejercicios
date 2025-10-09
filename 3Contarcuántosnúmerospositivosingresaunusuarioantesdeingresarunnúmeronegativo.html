@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contar números positivos hasta ingresar un negativo</title>
+</head>
+<body>
+  <!-- 
+    TITULO: Contar cuántos números positivos ingresa un usuario antes de ingresar un número negativo.
+    ENTRADA: Números enteros que el usuario digita uno por uno.
+    SALIDA: La cantidad de números positivos ingresados antes de digitar un número negativo.
+    PROCESO: Usar un ciclo MIENTRAS (while) para ir contando todos los números positivos 
+             hasta que el usuario ingrese un número negativo. 
+  -->
+
+  <h2>Contar números positivos hasta ingresar un negativo</h2>
+
+  <label for="num">Ingrese un número: </label>
+  <input type="number" id="num">
+  <button onclick="agregarNumero()">Ingresar</button>
+  <button onclick="mostrarResultado()">Mostrar resultado</button>
+
+  <h3 id="lista"></h3>
+  <h3 id="resultado"></h3>
+
+  <script>
+    let contador = 0;
+    let numeros = [];
+    let terminado = false;
+
+    function agregarNumero() {
+      if (terminado) return;
+
+      let valor = parseInt(document.getElementById("num").value);
+
+      if (valor >= 0) {
+        contador++;
+        numeros.push(valor);
+        document.getElementById("lista").innerText = 
+          "Números ingresados: " + numeros.join(", ");
+      } else {
+        terminado = true;
+        document.getElementById("resultado").innerText = 
+          "Se ingresó un número negativo. Proceso terminado.";
+      }
+
+      document.getElementById("num").value = "";
+    }
+
+    function mostrarResultado() {
+      document.getElementById("resultado").innerText = 
+        "Cantidad de números positivos ingresados: " + contador;
+    }
+  </script>
+</body>
+</html>

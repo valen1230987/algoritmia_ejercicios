@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contar dígitos</title>
+</head>
+<body>
+  <!-- 
+    TITULO: Contar cuántos dígitos tiene un número ingresado.
+    ENTRADA: Un número entero.
+    SALIDA: Cantidad de dígitos que tiene el número.
+    PROCESO: Usar división entre 10 en un ciclo MIENTRAS hasta que el número sea 0.
+  -->
+
+  <h2>Contar dígitos</h2>
+  <label for="num">Ingrese un número: </label>
+  <input type="number" id="num">
+  <button onclick="contarDigitos()">Contar</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    function contarDigitos() {
+      let valor = Math.abs(parseInt(document.getElementById("num").value));
+      let contador = 0;
+
+      while (valor > 0) {
+        valor = Math.floor(valor / 10);
+        contador++;
+      }
+
+      document.getElementById("resultado").innerText = 
+        "Cantidad de dígitos: " + contador;
+    }
+  </script>
+</body>
+</html>

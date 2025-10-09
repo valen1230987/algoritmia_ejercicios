@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplicar por sumas sucesivas</title>
+</head>
+<body>
+  <!-- 
+    TITULO: Multiplicar un número por sumas sucesivas usando MIENTRAS.
+    ENTRADA: Dos números enteros (num1 y num2).
+    SALIDA: El resultado de multiplicar num1 por num2.
+    PROCESO: Sumar el primer número tantas veces como indique el segundo usando MIENTRAS.
+  -->
+
+  <h2>Multiplicar usando sumas sucesivas</h2>
+  
+  <label for="num1">Número 1: </label>
+  <input type="number" id="num1"><br><br>
+  
+  <label for="num2">Número 2: </label>
+  <input type="number" id="num2"><br><br>
+  
+  <button onclick="multiplicar()">Multiplicar</button>
+  
+  <h3 id="resultado"></h3>
+  
+  <script>
+    function multiplicar() {
+      let a = parseInt(document.getElementById("num1").value);
+      let b = parseInt(document.getElementById("num2").value);
+      let resultado = 0;
+      let contador = 0;
+      
+      while (contador < b) {
+        resultado += a;
+        contador++;
+      }
+      
+      document.getElementById("resultado").innerText = 
+        a + " x " + b + " = " + resultado;
+    }
+  </script>
+</body>
+</html>

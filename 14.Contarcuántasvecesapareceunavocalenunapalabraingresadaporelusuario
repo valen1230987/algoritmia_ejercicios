@@ -1,0 +1,26 @@
+//Nombre: Programa para contar la cantidad de veces que aparece una vocal en una palabra
+//Entrada: palabra como cadena
+//Salida: Cantidad de veces que aparece la vocal
+//Proceso: Se recorre la palabra carácter por carácter
+Algoritmo Contar_vocal_en_palabra
+	Definir palabra, letra Como Cadena
+	Definir i, contador Como Entero
+	Escribir "Ingrese una palabra: "
+	Leer palabra
+	
+	Escribir "Ingrese la vocal a contar: "
+	Leer letra
+	
+	contador = 0
+	i = 1
+	
+	Mientras i <= Longitud(palabra) Hacer
+		Si Subcadena(palabra, i, i) = letra Entonces
+			contador = contador + 1
+		FinSi
+		i = i + 1
+	Fin Mientras
+	
+	Escribir "La vocal ", letra, " aparece ", contador, " veces en la palabra."
+FinAlgoritmo
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Factorial de un número</title>
+</head>
+<body>
+  <!-- 
+    TITULO: Calcular el factorial de un número ingresado por el usuario.
+    ENTRADA: Un número entero positivo.
+    SALIDA: El factorial de ese número.
+    PROCESO: Multiplicar sucesivamente desde 1 hasta el número ingresado usando MIENTRAS.
+  -->
+
+  <h2>Calcular factorial</h2>
+  <label for="num">Ingrese un número: </label>
+  <input type="number" id="num">
+  <button onclick="factorial()">Calcular</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    function factorial() {
+      let n = parseInt(document.getElementById("num").value);
+      let resultado = 1;
+      let i = 1;
+
+      while (i <= n) {
+        resultado = resultado * i;
+        i++;
+      }
+
+      document.getElementById("resultado").innerText = 
+        "El factorial de " + n + " es: " + resultado;
+    }
+  </script>
+</body>
+</html>

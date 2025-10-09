@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificación de contraseña</title>
+</head>
+<body>
+  <!-- 
+    TITULO: Pedir contraseñas hasta que el usuario ingrese la correcta.
+    ENTRADA: Contraseña escrita por el usuario.
+    SALIDA: Mensaje de éxito o error.
+    PROCESO: Repetir con MIENTRAS hasta que la contraseña coincida con la establecida.
+  -->
+
+  <h2>Ingresar contraseña</h2>
+  <label for="clave">Contraseña: </label>
+  <input type="password" id="clave">
+  <button onclick="verificar()">Ingresar</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    const correcta = "1234"; 
+    let acceso = false;
+
+    function verificar() {
+      if (acceso) return;
+
+      let entrada = document.getElementById("clave").value;
+
+      if (entrada === correcta) {
+        acceso = true;
+        document.getElementById("resultado").innerText = 
+          "Acceso concedido ✅";
+      } else {
+        document.getElementById("resultado").innerText = 
+          "Contraseña incorrecta ❌, intente de nuevo.";
+      }
+
+      document.getElementById("clave").value = "";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Suma de números impares entre 1 y 50</title>
+</head>
+<body>
+  <!-- 
+    TITULO: Sumar los números impares entre 1 y 50.
+    ENTRADA: Ninguna (se calcula automáticamente).
+    SALIDA: La suma de los números impares entre 1 y 50.
+    PROCESO: Recorrer los números con MIENTRAS y acumular solo los impares.
+  -->
+
+  <h2>Suma de números impares entre 1 y 50</h2>
+  <button onclick="sumarImpares()">Calcular suma</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    function sumarImpares() {
+      let num = 1;
+      let suma = 0;
+
+      while (num <= 50) {
+        if (num % 2 !== 0) {
+          suma += num;
+        }
+        num++;
+      }
+
+      document.getElementById("resultado").innerText = 
+        "La suma de los impares entre 1 y 50 es: " + suma;
+    }
+  </script>
+</body>
+</html>

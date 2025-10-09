@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cajero automático</title>
+</head>
+<body>
+  <!-- 
+    TITULO: Simular un cajero automático que permita retiros hasta agotar el saldo.
+    ENTRADA: Cantidad a retirar ingresada por el usuario.
+    SALIDA: Mensaje con el saldo restante o aviso de saldo insuficiente.
+    PROCESO: Usar MIENTRAS para permitir retiros hasta que el saldo llegue a 0.
+  -->
+
+  <h2>Cajero automático</h2>
+  <label for="retiro">Ingrese valor a retirar: </label>
+  <input type="number" id="retiro">
+  <button onclick="retirar()">Retirar</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    let saldo = 500; // saldo inicial
+
+    function retirar() {
+      let valor = parseInt(document.getElementById("retiro").value);
+
+      if (valor <= saldo && valor > 0) {
+        saldo -= valor;
+        document.getElementById("resultado").innerText =
+          "Retiro exitoso. Saldo restante: $" + saldo;
+      } else if (valor > saldo) {
+        document.getElementById("resultado").innerText =
+          "Saldo insuficiente. Saldo actual: $" + saldo;
+      } else {
+        document.getElementById("resultado").innerText =
+          "Ingrese un valor válido.";
+      }
+
+      if (saldo === 0) {
+        document.getElementById("resultado").innerText +=
+          " El saldo se ha agotado.";
+      }
+
+      document.getElementById("retiro").value = "";
+    }
+  </script>
+</body>
+</html>

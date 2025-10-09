@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calificaciones hasta ingresar > 100</title>
+</head>
+<body>
+  <!-- 
+    TITULO: Leer una lista de calificaciones y detenerse cuando se ingrese un número mayor a 100.
+    ENTRADA: Calificaciones (números enteros).
+    SALIDA: Lista de calificaciones válidas.
+    PROCESO: Usar MIENTRAS para guardar las calificaciones hasta que se ingrese una mayor a 100.
+  -->
+
+  <h2>Lista de calificaciones</h2>
+  <label for="nota">Ingrese calificación: </label>
+  <input type="number" id="nota">
+  <button onclick="agregarNota()">Ingresar</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    let notas = [];
+    let detenido = false;
+
+    function agregarNota() {
+      if (detenido) return;
+
+      let valor = parseInt(document.getElementById("nota").value);
+
+      if (valor > 100) {
+        detenido = true;
+        document.getElementById("resultado").innerText =
+          "Se ingresó un valor mayor a 100. Proceso detenido.\nNotas válidas: " + notas.join(", ");
+      } else {
+        notas.push(valor);
+        document.getElementById("resultado").innerText =
+          "Notas ingresadas: " + notas.join(", ");
+      }
+
+      document.getElementById("nota").value = "";
+    }
+  </script>
+</body>
+</html>

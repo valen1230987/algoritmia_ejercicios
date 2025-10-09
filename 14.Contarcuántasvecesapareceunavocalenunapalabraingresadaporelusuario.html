@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contar vocales</title>
+</head>
+<body>
+  <!-- 
+    TITULO: Contar cuántas veces aparece una vocal en una palabra ingresada por el usuario.
+    ENTRADA: Una palabra y una vocal a buscar.
+    SALIDA: Cantidad de veces que aparece esa vocal en la palabra.
+    PROCESO: Usar MIENTRAS para recorrer la palabra carácter por carácter y contar las coincidencias.
+  -->
+
+  <h2>Contar vocales en una palabra</h2>
+  <label for="palabra">Ingrese una palabra: </label>
+  <input type="text" id="palabra"><br><br>
+
+  <label for="vocal">Ingrese la vocal a contar: </label>
+  <input type="text" id="vocal" maxlength="1"><br><br>
+
+  <button onclick="contarVocal()">Contar</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    function contarVocal() {
+      let palabra = document.getElementById("palabra").value.toLowerCase();
+      let vocal = document.getElementById("vocal").value.toLowerCase();
+      let contador = 0;
+      let i = 0;
+
+      while (i < palabra.length) {
+        if (palabra[i] === vocal) {
+          contador++;
+        }
+        i++;
+      }
+
+      document.getElementById("resultado").innerText =
+        "La vocal '" + vocal + "' aparece " + contador + " veces en '" + palabra + "'.";
+    }
+  </script>
+</body>
+</html>
